@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to JB Hi Fi Australia</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="site-shell" aria-label="JB Hi-Fi 1999 style site recreation">
+        <aside class="sidebar" aria-label="Departments">
+            <div class="remote-panel">
+                <div class="remote-top">
+                    <span>Dept</span>
+                    <output class="remote-display" aria-live="polite"></output>
+                </div>
+                <div class="remote-grid">
+                    <button class="remote-button" data-section="new-at-jb">New JB</button>
+                    <button class="remote-button" data-section="tvs">TVs</button>
+                    <button class="remote-button" data-section="audio">Audio</button>
+                    <button class="remote-button" data-section="computers">Comput.</button>
+                    <button class="remote-button" data-section="computer-parts">PC Parts</button>
+                    <button class="remote-button" data-section="gaming">Gaming</button>
+                    <button class="remote-button" data-section="mobile">Mobile</button>
+                    <button class="remote-button" data-section="movies">Movies + TV</button>
+                    <button class="remote-button" data-section="music">Music</button>
+                    <button class="remote-button" data-section="appliances">Applian.</button>
+                    <button class="remote-button" data-section="smart-home">Smart Home</button>
+                    <button class="remote-button" data-section="collectibles">Collect.</button>
+                    <button class="remote-button" data-section="office-tech">Office Tech</button>
+                    <button class="remote-button service-button" data-section="extra-care">Extra Care</button>
+                </div>
+                <div class="remote-grid remote-grid-secondary">
+                    <button class="remote-button service-button" data-section="trade-in">Trade In</button>
+                    <button class="remote-button service-button" data-section="mobile-services">Mobile Srv.</button>
+                    <button class="remote-button service-button" data-section="installations">Installs</button>
+                    <button class="remote-button" data-section="stores">Stores</button>
+                </div>
+                <button class="remote-logo" data-section="welcome" aria-label="JB Hi-Fi home">
+                    <img src="assets/images/JB-Logo.png" alt="JB Hi-Fi">
+                </button>
+            </div>
+        </aside>
+
+        <main class="jb-body">
+            <header class="hero">
+                <img class="main-logo" src="assets/retro/animjb.gif" width="369" height="238" alt="JB Hi-Fi">
+            </header>
+
+            <section id="welcome" class="page active">
+                <nav class="bottom-bar" aria-label="Main links">
+                    <button class="bottom-button" data-section="charts"><img src="assets/retro/bottombar_01_01.gif" width="102" height="51" alt="Charts"></button>
+                    <button class="bottom-button" data-section="album"><img src="assets/retro/bottombar_01_02.gif" width="212" height="51" alt="Album of the week"></button>
+                    <button class="bottom-button" data-section="about"><img src="assets/retro/bottombar_01_03.gif" width="92" height="51" alt="About us"></button>
+                </nav>
+                <h1>Welcome To JB Hi-Fi</h1>
+                <blockquote>
+                    <p>Established in 1975, JB Hi-Fi began as a retailer in East Keilor, Victoria, Australia with one simple philosophy: to deliver a specialist range of hi-fi and recorded music at Australia's lowest prices.</p>
+                    <p>Now, maintaining this philosophy, JB is Australia's leading independent retailer of home entertainment and recorded music with 11 superstores throughout Victoria and New South Wales. JB offers the world's leading brands in hi-fi, speakers, televisions, VCRs, car sound, home theatre and portable audio and continues to stock an exclusive range of specialist hi-fi. JB also offers Australia's largest range of recorded music, with over 150,000 CD titles, all at Australia's lowest prices! JB has it all, huge range, cheapest prices, convenient locations, but most importantly genuine personal service from our expert experienced staff. So browse our site to keep up to date with the latest music news, product information and many great offers.</p>
+                </blockquote>
+                <h2>JB, You've done it again!</h2>
+                <blockquote>
+                    <p><i>Please Note</i>: At present we do not have facilities to do mail orders nor are we in a position to handle e-mail correspondence (although we appreciate your comments) contact the stores for details. We are working towards this in the near future and hope to see you in our stores in the meantime.</p>
+                    <p>Some of the pages this website links to are not Australian sites, so please contact us to check out availability, also the prices may reflect different currency so if you are interested in any products on this site, please visit our nearest store for JB's low prices.</p>
+                </blockquote>
+            </section>
+
+            <section id="charts" class="page">
+                <h1>Charts</h1>
+                <p class="center music-status" data-music-status>Dialling the iTunes AU chart feed...</p>
+                <table class="chart-table">
+                    <thead><tr><th>No.</th><th>Track</th><th>Artist</th><th>Album</th></tr></thead>
+                    <tbody data-chart-rows>
+                        <tr><td>1</td><td>Yellow</td><td>Coldplay</td><td>Parachutes</td></tr>
+                        <tr><td>2</td><td>Harder, Better, Faster, Stronger</td><td>Daft Punk</td><td>Discovery</td></tr>
+                        <tr><td>3</td><td>Everlong</td><td>Foo Fighters</td><td>The Colour And The Shape</td></tr>
+                        <tr><td>4</td><td>No One Knows</td><td>Queens of the Stone Age</td><td>Songs For The Deaf</td></tr>
+                        <tr><td>5</td><td>Teardrop</td><td>Massive Attack</td><td>Mezzanine</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="album" class="page">
+                <h1>Album Of The Week</h1>
+                <p class="center music-status" data-album-status>Looking up the iTunes AU top album...</p>
+                <div class="album-card">
+                    <img src="assets/products/music.jpg" alt="Album cover" data-album-art>
+                    <div>
+                        <h2 data-album-title>Discovery</h2>
+                        <p><b data-album-artist>Daft Punk</b></p>
+                        <p data-album-copy>New releases, loved albums and catalogue classics now sit where a supplier frame once would have loaded. The spirit remains: big range, low prices, and a yellow headline doing far too much work.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="page">
+                <h1>About JB Hi-Fi</h1>
+                <div class="retro-promo about-promo"><img src="assets/catalog/about-jb-50.jpg" alt="JB Hi-Fi 50 year album artwork"></div>
+                <blockquote>
+                    <p>JB Hi-Fi is Australia's largest home entertainment retailer, built on top products, great value and the same specialist-store energy that began in East Keilor.</p>
+                    <p>The current About Us page celebrates 50 years of JB with a record-sleeve style history image, which feels suspiciously perfect for this retro build. The new site has grown into TVs, audio, computers, gaming, mobile, movies, music, appliances, smart home, services and a national store network, but the loud yellow retail heart is still doing the heavy lifting.</p>
+                </blockquote>
+                <div class="about-stats">
+                    <article><b>1975</b><span>East Keilor beginnings</span></article>
+                    <article><b>50 years</b><span>Music, movies and tech history</span></article>
+                    <article><b>Big range</b><span>Entertainment, appliances and services</span></article>
+                </div>
+            </section>
+
+            <section id="new-at-jb" class="page department">
+                <h1>New at JB</h1>
+                <div class="retro-promo"><img src="assets/catalog/new-raven.jpg" alt="New tech promotion"></div>
+                <p class="department-copy">The latest gadgets and devices now get their own properly stocked corner of the 1999 frame: fresh wearables, gaming gear, smart tech, mobile offers and new release oddities.</p>
+                <div class="catalog-grid">
+                    <article><img src="assets/catalog/new-fitbit.png" alt="New Fitbit wearable"><b>New Wearables</b><span>Fresh watches, trackers and health tech from the current range.</span></article>
+                    <article><img src="assets/catalog/mobile-promo.png" alt="New mobile plan promotion"><b>Mobile Launches</b><span>Phone arrivals, plan offers and bonus bundles for modern pocket computers.</span></article>
+                    <article><img src="assets/catalog/gaming-promo.jpg" alt="New gaming release"><b>Just Landed Games</b><span>Pre-orders, console drops and new releases with big yellow energy.</span></article>
+                </div>
+                <ul class="category-links"><li>New tech gadgets</li><li>New release phones</li><li>New gaming</li><li>New smart home</li><li>New music and movies</li></ul>
+            </section>
+
+            <section id="tvs" class="page department">
+                <h1>TVs</h1>
+                <div class="retro-promo"><img src="assets/catalog/tv-promo.png" alt="TV clearance promotion"></div>
+                <p class="department-copy">OLED, QLED, QD-OLED, Mini LED and 4K smart televisions have taken over the old hi-fi showroom, with projectors, streaming sticks, mounts and home theatre extras alongside them.</p>
+                <div class="catalog-grid">
+                    <article><img src="assets/catalog/tv-oled.jpg" alt="OLED television"><b>OLED + QLED</b><span>Big screens with cinema blacks, bright panels and smart TV apps.</span></article>
+                    <article><img src="assets/catalog/tv-large.jpg" alt="Large smart television"><b>Large Screen TVs</b><span>65 inch and above for lounge rooms that mean business.</span></article>
+                    <article><img src="assets/catalog/smart-display.jpg" alt="Streaming display device"><b>Streaming + Extras</b><span>TV accessories, streamers, cables, remotes and wall mounting options.</span></article>
+                </div>
+                <ul class="category-links"><li>OLED TVs</li><li>QLED TVs</li><li>4K Ultra HD</li><li>Projectors</li><li>TV mounts</li><li>Streaming devices</li></ul>
+            </section>
+
+            <section id="audio" class="page department">
+                <h1>Headphones, Speakers & Audio</h1>
+                <div class="retro-promo"><img src="assets/catalog/audio-promo.png" alt="Audio promotion"></div>
+                <p class="department-copy">Headphones, portable speakers, soundbars, party audio, turntables and proper hi-fi kit keep the original JB spirit thumping away.</p>
+                <div class="catalog-grid">
+                    <article><img src="assets/catalog/audio-headphones.jpg" alt="Wireless headphones"><b>Headphones</b><span>Noise cancelling, true wireless, sports, gaming and travel listening.</span></article>
+                    <article><img src="assets/catalog/audio-speaker.jpg" alt="Portable speaker"><b>Speakers</b><span>Bluetooth speakers, smart speakers and party units for every shelf.</span></article>
+                    <article><img src="assets/catalog/install-soundbar.png" alt="Soundbar setup"><b>Soundbars</b><span>Home theatre audio with setup options if the cable nest gets serious.</span></article>
+                </div>
+                <ul class="category-links"><li>Wireless headphones</li><li>Portable speakers</li><li>Soundbars</li><li>Turntables</li><li>Hi-fi components</li><li>Party audio</li></ul>
+            </section>
+
+            <section id="computers" class="page department">
+                <h1>Computers</h1>
+                <div class="retro-promo"><img src="assets/catalog/computer-promo.png" alt="Computer promotion"></div>
+                <p class="department-copy">Laptops, desktops, tablets, monitors, printers and the modern office gear that would have made the old site ask politely for a RAM upgrade.</p>
+                <div class="catalog-grid">
+                    <article><img src="assets/catalog/computer-laptop.jpg" alt="Laptop computer"><b>Laptops</b><span>Everyday, student, creator, gaming and business-ready machines.</span></article>
+                    <article><img src="assets/catalog/computer-tablet.jpg" alt="Tablet computer"><b>Tablets</b><span>iPad, Android tablets, styluses, keyboards and portable screens.</span></article>
+                    <article><img src="assets/catalog/office-printer.jpg" alt="Printer"><b>Home Office</b><span>Printers, monitors, webcams, networking and desk accessories.</span></article>
+                </div>
+                <ul class="category-links"><li>Laptops</li><li>Desktop computers</li><li>Tablets</li><li>Monitors</li><li>Printers</li><li>Computer bags</li></ul>
+            </section>
+
+            <section id="computer-parts" class="page department">
+                <h1>Computer Parts & Accessories</h1>
+                <div class="retro-promo"><img src="assets/catalog/computer-promo.png" alt="PC accessories promotion"></div>
+                <p class="department-copy">All the bits that make a modern computer corner hum: storage, networking, keyboards, mice, chargers, webcams, monitors and cables.</p>
+                <div class="catalog-grid">
+                    <article><img src="assets/catalog/pc-keyboard.jpg" alt="Keyboard accessory"><b>Input Gear</b><span>Keyboards, mice, webcams, headsets and desk controls.</span></article>
+                    <article><img src="assets/catalog/pc-network.jpg" alt="Networking device"><b>Networking</b><span>Routers, mesh Wi-Fi, adapters, switches and home internet gear.</span></article>
+                    <article><img src="assets/catalog/gaming-game.jpg" alt="Gaming accessory"><b>Performance Bits</b><span>Gaming monitors, controllers, capture gear and PC accessories.</span></article>
+                </div>
+                <ul class="category-links"><li>Storage</li><li>Keyboards</li><li>Mice</li><li>Networking</li><li>Cables</li><li>Chargers</li></ul>
+            </section>
+
+            <section id="gaming" class="page department">
+                <h1>Gaming</h1>
+                <div class="retro-promo"><img src="assets/catalog/gaming-promo.jpg" alt="Gaming promotion"></div>
+                <p class="department-copy">PC, PlayStation, Xbox and Nintendo now sit where supplier frames used to load, packed with consoles, games, pre-orders, controllers, headsets and merch.</p>
+                <div class="catalog-grid">
+                    <article><img src="assets/catalog/gaming-console.jpg" alt="Gaming console"><b>Consoles</b><span>PlayStation, Xbox, Nintendo and handheld gaming hardware.</span></article>
+                    <article><img src="assets/catalog/gaming-game.jpg" alt="New game release"><b>Games</b><span>New releases, pre-orders, digital codes and catalogue classics.</span></article>
+                    <article><img src="assets/catalog/pc-keyboard.jpg" alt="Gaming keyboard"><b>PC Gaming</b><span>Keyboards, mice, monitors, headsets and streaming accessories.</span></article>
+                </div>
+                <ul class="category-links"><li>PlayStation</li><li>Xbox</li><li>Nintendo</li><li>PC gaming</li><li>Gaming headsets</li><li>Pre-orders</li></ul>
+            </section>
+
+            <section id="mobile" class="page department">
+                <h1>Mobile Phones</h1>
+                <div class="retro-promo"><img src="assets/catalog/mobile-promo.png" alt="Mobile phone promotion"></div>
+                <p class="department-copy">iPhone, Samsung Galaxy, Google Pixel, Nothing, prepaid, plans, cases, chargers and wearable tech, all far too powerful for a 1998 address book.</p>
+                <div class="catalog-grid">
+                    <article><img src="assets/catalog/mobile-iphone.jpg" alt="iPhone"><b>iPhone</b><span>Apple phones, cases, MagSafe accessories and charging gear.</span></article>
+                    <article><img src="assets/catalog/mobile-android.jpg" alt="Android phone"><b>Android</b><span>Samsung, Google Pixel, OPPO, Nothing and more.</span></article>
+                    <article><img src="assets/catalog/service-trade-strip.png" alt="Trade in devices"><b>Plans + Trade In</b><span>Mobile plans, prepaid SIMs, trade-in value and device extras.</span></article>
+                </div>
+                <ul class="category-links"><li>iPhone</li><li>Samsung Galaxy</li><li>Google Pixel</li><li>Phone cases</li><li>Chargers</li><li>Prepaid SIMs</li></ul>
+            </section>
+
+            <section id="movies" class="page department">
+                <h1>Movies + TV Shows</h1>
+                <div class="retro-promo"><img src="assets/catalog/movies-promo.png" alt="Movies promotion"></div>
+                <p class="department-copy">DVD, Blu-Ray, 4K Ultra HD, steelbooks, anime, box sets and new releases keep the physical media wall alive and very yellow.</p>
+                <div class="catalog-grid">
+                    <article><img src="assets/catalog/movies-disc.jpg" alt="Movie disc release"><b>New Releases</b><span>Fresh movies and TV seasons on DVD, Blu-Ray and 4K Ultra HD.</span></article>
+                    <article><img src="assets/catalog/movies-boxset.jpg" alt="Movie box set"><b>Box Sets</b><span>Complete seasons, franchise collections and shelf-bending sets.</span></article>
+                    <article><img src="assets/catalog/collectible-figure.jpg" alt="Movie collectible"><b>Fan Favourites</b><span>Anime, cult picks, documentaries, classics and collectibles.</span></article>
+                </div>
+                <ul class="category-links"><li>4K Ultra HD</li><li>Blu-Ray</li><li>DVD</li><li>TV on DVD</li><li>Anime</li><li>Steelbooks</li></ul>
+            </section>
+
+            <section id="music" class="page department">
+                <h1>New Release Music</h1>
+                <div class="retro-promo"><img src="assets/catalog/music-promo.jpg" alt="Music promotion"></div>
+                <p class="department-copy">CDs, vinyl, pre-orders, upcoming albums and JB exclusives preserve the record-store DNA that started the whole thing.</p>
+                <div class="catalog-grid">
+                    <article><img src="assets/catalog/music-vinyl.jpg" alt="Vinyl record"><b>Vinyl</b><span>New pressings, classic albums, exclusives and collector editions.</span></article>
+                    <article><img src="assets/catalog/music-cd.jpg" alt="CD album"><b>CDs</b><span>New release albums, local favourites and deep catalogue titles.</span></article>
+                    <article><img src="assets/catalog/movies-boxset.jpg" alt="Box set release"><b>Pre-orders</b><span>Upcoming releases and limited editions before they hit shelves.</span></article>
+                </div>
+                <ul class="category-links"><li>Vinyl</li><li>CDs</li><li>Pre-orders</li><li>JB exclusives</li><li>Box sets</li><li>Australian artists</li></ul>
+            </section>
+
+            <section id="appliances" class="page department">
+                <h1>Home Appliances</h1>
+                <div class="retro-promo"><img src="assets/catalog/appliance-promo.png" alt="Home appliance promotion"></div>
+                <p class="department-copy">Fridges, washers, dryers, coffee machines, cooking, floorcare, heating, cooling and small appliances bring a whole house into the old hi-fi shop.</p>
+                <div class="catalog-grid">
+                    <article><img src="assets/catalog/appliance-fridge.jpg" alt="Fridge appliance"><b>Fridges + Laundry</b><span>Fridges, freezers, washers, dryers and dishwashers.</span></article>
+                    <article><img src="assets/catalog/appliance-coffee.jpg" alt="Coffee appliance"><b>Small Appliances</b><span>Coffee machines, air fryers, vacuums and kitchen helpers.</span></article>
+                    <article><img src="assets/catalog/install-tv.png" alt="Appliance installation"><b>Delivery + Install</b><span>Setup services for selected appliances and connected gear.</span></article>
+                </div>
+                <ul class="category-links"><li>Fridges</li><li>Washing machines</li><li>Dryers</li><li>Coffee machines</li><li>Vacuum cleaners</li><li>Heating + cooling</li></ul>
+            </section>
+
+            <section id="smart-home" class="page department">
+                <h1>Smart Home</h1>
+                <div class="retro-promo"><img src="assets/catalog/smart-promo.png" alt="Smart security promotion"></div>
+                <p class="department-copy">Smart speakers, displays, security cameras, lighting, plugs, hubs and sensors: the house is online now, which Finbar probably would have found quite handy.</p>
+                <div class="catalog-grid">
+                    <article><img src="assets/catalog/smart-display.jpg" alt="Smart display"><b>Smart Speakers</b><span>Voice assistants, displays, speakers and home control hubs.</span></article>
+                    <article><img src="assets/catalog/smart-security.jpg" alt="Smart security camera"><b>Security</b><span>Cameras, doorbells, sensors and smart locks.</span></article>
+                    <article><img src="assets/catalog/pc-network.jpg" alt="Wi-Fi networking"><b>Connected Home</b><span>Wi-Fi, plugs, lights, automation and power control.</span></article>
+                </div>
+                <ul class="category-links"><li>Smart speakers</li><li>Security cameras</li><li>Video doorbells</li><li>Smart lighting</li><li>Wi-Fi</li><li>Smart plugs</li></ul>
+            </section>
+
+            <section id="collectibles" class="page department">
+                <h1>Collectibles + Merchandise</h1>
+                <div class="retro-promo"><img src="assets/catalog/collectible-promo.jpg" alt="Collectibles promotion"></div>
+                <p class="department-copy">Movie figures, gaming merch, pop culture collectibles, trading cards, plush, gifts and tabletop oddments for the cabinet, shelf or desk.</p>
+                <div class="catalog-grid">
+                    <article><img src="assets/catalog/collectible-figure.jpg" alt="Collectible figure"><b>Figures</b><span>Movie, TV, anime and gaming figures from the current catalogue.</span></article>
+                    <article><img src="assets/catalog/collectible-game.jpg" alt="Collectible game item"><b>Games + Gifts</b><span>Board games, card games, novelty gifts and family favourites.</span></article>
+                    <article><img src="assets/catalog/cat-merch-stubbyholder.jpg" alt="Merchandise item"><b>Merch</b><span>Apparel, drinkware, plush, posters and fan gear.</span></article>
+                </div>
+                <ul class="category-links"><li>Figures</li><li>Trading cards</li><li>Board games</li><li>Plush</li><li>Posters</li><li>Pop culture gifts</li></ul>
+            </section>
+
+            <section id="office-tech" class="page department">
+                <h1>Office Technology</h1>
+                <div class="retro-promo"><img src="assets/catalog/computer-promo.png" alt="Office technology promotion"></div>
+                <p class="department-copy">Printers, monitors, webcams, networking, phones, tablets and desk tech for the store counter, meeting room or home office.</p>
+                <div class="catalog-grid">
+                    <article><img src="assets/catalog/office-printer.jpg" alt="Office printer"><b>Printers</b><span>Printers, ink, toner, scanners and document gear.</span></article>
+                    <article><img src="assets/catalog/computer-laptop.jpg" alt="Office laptop"><b>Work Devices</b><span>Laptops, tablets, monitors and accessories for getting things done.</span></article>
+                    <article><img src="assets/catalog/pc-network.jpg" alt="Office networking"><b>Desk + Network</b><span>Routers, webcams, keyboards, chargers, hubs and cables.</span></article>
+                </div>
+                <ul class="category-links"><li>Printers</li><li>Monitors</li><li>Webcams</li><li>Routers</li><li>Office phones</li><li>Desk accessories</li></ul>
+            </section>
+
+            <section id="extra-care" class="page service-page">
+                <h1>JB Hi-Fi Extra Care</h1>
+                <div class="feature-row"><img src="assets/services/extra-care.png" alt="Extra Care service"><p>Extra Care adds protection, replacement and support options for eligible gear after purchase, with the current service artwork pulled into the retro frame.</p></div>
+                <div class="service-icons">
+                    <article><img src="assets/catalog/care-peace.png" alt="Peace of mind icon"><b>Peace of mind</b></article>
+                    <article><img src="assets/catalog/care-squaretrade.png" alt="SquareTrade icon"><b>Support options</b></article>
+                </div>
+            </section>
+
+            <section id="mobile-services" class="page service-page">
+                <h1>Mobile Services and Plans</h1>
+                <div class="feature-row"><img src="assets/services/mobile-services.png" alt="Mobile services"><p>Mobile plans, prepaid SIMs, device extras and connectivity services for phones and tablets.</p></div>
+                <div class="catalog-grid">
+                    <article><img src="assets/catalog/mobile-promo.png" alt="Mobile plan offer"><b>Phone Plans</b><span>Plans and prepaid options for connected devices.</span></article>
+                    <article><img src="assets/catalog/mobile-service-business.png" alt="JB Business logo"><b>Business</b><span>Connectivity and device services for work.</span></article>
+                    <article><img src="assets/catalog/mobile-android.jpg" alt="Mobile handset"><b>Devices</b><span>Phones, cases, chargers and setup extras.</span></article>
+                </div>
+            </section>
+
+            <section id="trade-in" class="page service-page">
+                <h1>Trade In Devices</h1>
+                <div class="retro-promo trade-promo"><img src="assets/catalog/service-trade-promo.png" alt="Trade in promotion"></div>
+                <div class="feature-row"><img src="assets/services/trade-in.png" alt="Trade in service"><p>Trade in eligible devices for a JB Hi-Fi e-gift card and put the credit towards something shiny.</p></div>
+                <div class="trade-strip"><img src="assets/catalog/service-trade-strip.png" alt="Mobile phones, tablets, computers, smart watches, game consoles, cameras, headphones and more"><b>Phones, tablets, computers, smart watches, game consoles, cameras, headphones and more</b></div>
+            </section>
+
+            <section id="installations" class="page service-page">
+                <h1>Installation Services</h1>
+                <div class="feature-row"><img src="assets/services/installations.png" alt="Installation service"><p>TV, audio, smart home, Wi-Fi and appliance setup services, without pretending a supplier iframe is going to behave.</p></div>
+                <div class="catalog-grid">
+                    <article><img src="assets/catalog/install-tv.png" alt="TV wall mount installation"><b>TV Wall Mounting</b><span>Wall mounting and setup for selected TVs.</span></article>
+                    <article><img src="assets/catalog/install-soundbar.png" alt="Soundbar installation"><b>Audio Setup</b><span>Soundbars, home theatre and tidy connected audio.</span></article>
+                    <article><img src="assets/catalog/install-computer.png" alt="Computer setup"><b>Computer Setup</b><span>Computers, Wi-Fi and smart home installs.</span></article>
+                </div>
+            </section>
+
+            <section id="stores" class="page stores-page">
+                <h1>Store Locations</h1>
+                <p class="center">Then: 11 superstores. Now: a national rollout. Select a state below and bask in the list.</p>
+                <div class="store-state-tabs" aria-label="Store state filters"></div>
+                <div class="store-list" aria-live="polite"></div>
+            </section>
+
+            <footer>
+                <p>Copyright 1999 JB Hi Fi</p>
+                <img src="assets/retro/webdesign.gif" width="246" height="84" alt="Web Design by Finbar O'Hanlon">
+                <p><small>For Best Viewing set screen to 800 x 600 and use a 4.0 or later browser</small></p>
+                <p>Last updated 13/12/99</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
