@@ -23,7 +23,8 @@ body.display-effects {
     text-shadow: .6px 0 rgba(255, 0, 0, .18), -.6px 0 rgba(0, 180, 255, .16);
 }
 
-body.display-effects .site-shell {
+body.display-effects .jb-body,
+body.display-effects .remote-panel {
     filter: contrast(1.08) saturate(1.14) brightness(1.02);
 }
 
