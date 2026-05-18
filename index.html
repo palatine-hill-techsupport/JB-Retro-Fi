@@ -7,9 +7,13 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <button class="remote-launcher" type="button" aria-label="Open department remote" aria-expanded="false">
+        <img src="assets/remote-control.svg" alt="">
+    </button>
     <div class="site-shell" aria-label="JB Hi-Fi 1999 style site recreation">
         <aside class="sidebar" aria-label="Departments">
             <div class="remote-panel">
+                <button class="remote-close" type="button" aria-label="Close department remote">Close</button>
                 <div class="remote-top">
                     <span>Dept</span>
                     <output class="remote-display" aria-live="polite"></output>
@@ -39,6 +43,7 @@
                 <button class="remote-logo" data-section="welcome" aria-label="JB Hi-Fi home">
                     <img src="assets/images/JB-Logo.png" alt="JB Hi-Fi">
                 </button>
+                <button class="display-toggle" type="button" aria-pressed="true">CRT On</button>
             </div>
         </aside>
 
@@ -274,7 +279,7 @@
 
             <section id="mobile-services" class="page service-page">
                 <h1>Mobile Services and Plans</h1>
-                <div class="feature-row"><img src="assets/services/mobile-services.png" alt="Mobile services"><p>Mobile plans, prepaid SIMs, device extras and connectivity services for phones and tablets.</p></div>
+                <div class="feature-row"><img src="assets/products/mobile-alt.jpg" alt="Mobile phones and services"><p>Mobile plans, prepaid SIMs, device extras and connectivity services for phones and tablets.</p></div>
                 <div class="catalog-grid">
                     <article><img src="assets/catalog/mobile-promo.png" alt="Mobile plan offer"><b>Phone Plans</b><span>Plans and prepaid options for connected devices.</span></article>
                     <article><img src="assets/catalog/mobile-service-business.png" alt="JB Business logo"><b>Business</b><span>Connectivity and device services for work.</span></article>
@@ -285,7 +290,7 @@
             <section id="trade-in" class="page service-page">
                 <h1>Trade In Devices</h1>
                 <div class="retro-promo trade-promo"><img src="assets/catalog/service-trade-promo.png" alt="Trade in promotion"></div>
-                <div class="feature-row"><img src="assets/services/trade-in.png" alt="Trade in service"><p>Trade in eligible devices for a JB Hi-Fi e-gift card and put the credit towards something shiny.</p></div>
+                <div class="feature-row trade-feature"><img src="assets/services/trade-in.png" alt="Mobile phones, tablets, computers, smart watches, game consoles, cameras, headphones and more"><p>Trade in eligible devices for a JB Hi-Fi e-gift card and put the credit towards something shiny.</p></div>
                 <div class="trade-strip"><img src="assets/catalog/service-trade-strip.png" alt="Mobile phones, tablets, computers, smart watches, game consoles, cameras, headphones and more"><b>Phones, tablets, computers, smart watches, game consoles, cameras, headphones and more</b></div>
             </section>
 
@@ -311,6 +316,10 @@
                 <img src="assets/retro/webdesign.gif" width="246" height="84" alt="Web Design by Finbar O'Hanlon">
                 <p><small>For Best Viewing set screen to 800 x 600 and use a 4.0 or later browser</small></p>
                 <p>Last updated 13/12/99</p>
+                <div class="footer-credit">
+                    <p><small>Want the real time capsule? Visit the <a href="https://web.archive.org/web/19990208014123/http://www.jbhifi.com.au/" target="_blank" rel="noreferrer">original JB Hi-Fi site on the Wayback Machine</a>.</small></p>
+                    <p><small>Vibed foward in time by <a href="https://denby.design/">denby.design</a> with special thanks to the <a href="https://archive.org/">internet archive</a></small></p>
+                </div>
             </footer>
         </main>
     </div>
