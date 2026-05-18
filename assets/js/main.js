@@ -2,6 +2,10 @@ const sectionButtons = document.querySelectorAll("[data-section]");
 const pages = document.querySelectorAll(".page");
 const storeTabs = document.querySelector(".store-state-tabs");
 const storeList = document.querySelector(".store-list");
+const sidebar = document.querySelector(".sidebar");
+const remoteLauncher = document.querySelector(".remote-launcher");
+const remoteClose = document.querySelector(".remote-close");
+const displayToggle = document.querySelector(".display-toggle");
 const remoteDisplay = document.querySelector(".remote-display");
 const chartRows = document.querySelector("[data-chart-rows]");
 const musicStatus = document.querySelector("[data-music-status]");
@@ -10,6 +14,39 @@ const albumArt = document.querySelector("[data-album-art]");
 const albumTitle = document.querySelector("[data-album-title]");
 const albumArtist = document.querySelector("[data-album-artist]");
 const albumCopy = document.querySelector("[data-album-copy]");
+
+function setRemoteOpen(isOpen) {
+    document.body.classList.toggle("remote-open", isOpen);
+    if (remoteLauncher) {
+        remoteLauncher.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    }
+}
+
+function setDisplayEffects(isOn) {
+    document.body.classList.toggle("display-effects", isOn);
+    if (displayToggle) {
+        displayToggle.setAttribute("aria-pressed", isOn ? "true" : "false");
+        displayToggle.textContent = isOn ? "CRT On" : "CRT Off";
+    }
+
+    try {
+        localStorage.setItem("jbDisplayEffects", isOn ? "on" : "off");
+    } catch (error) {
+        // Local storage is optional; the visual toggle still works without it.
+    }
+}
+
+function initialiseDisplayEffects() {
+    let savedPreference = null;
+
+    try {
+        savedPreference = localStorage.getItem("jbDisplayEffects");
+    } catch (error) {
+        savedPreference = null;
+    }
+
+    setDisplayEffects(savedPreference !== "off");
+}
 
 const sectionLabels = {
     welcome: "",
@@ -37,7 +74,6 @@ const sectionLabels = {
 };
 
 const storesByState = {
-    ACT: ["Belconnen", "Canberra City", "Fyshwick", "Tuggeranong", "Woden"],
     NSW: [
         "Albury", "Artarmon", "Bankstown", "Bathurst", "Belrose", "Blacktown",
         "Bondi Junction", "Broadway", "Brookvale", "Campbelltown", "Caringbah",
@@ -47,20 +83,6 @@ const storesByState = {
         "Rouse Hill", "Shellharbour", "Sydney City", "Tamworth", "Taren Point",
         "Tweed City", "Wagga Wagga", "Warringah Mall", "Wetherill Park", "Wollongong"
     ],
-    NT: ["Berrimah", "Darwin", "Palmerston"],
-    QLD: [
-        "Bald Hills", "Biggera Waters", "Brisbane City", "Broadbeach", "Browns Plains",
-        "Buddina", "Bundaberg", "Burleigh Heads", "Cairns", "Capalaba", "Carindale",
-        "Chermside", "Garden City", "Helensvale", "Ipswich", "Kawana", "Loganholme",
-        "Mackay", "Maroochydore", "Morayfield", "Mount Gravatt", "Noosa", "Robina",
-        "Rockhampton", "Springfield", "Toowoomba", "Townsville", "Underwood"
-    ],
-    SA: [
-        "Adelaide", "Adelaide Airport", "Cavan", "Colonnades", "Elizabeth",
-        "Gepps Cross", "Marion", "Modbury", "Munno Para", "Noarlunga", "Rundle Mall",
-        "West Lakes"
-    ],
-    TAS: ["Devonport", "Hobart", "Launceston", "Rosny"],
     VIC: [
         "Airport West", "Altona North", "Ballarat", "Bendigo", "Brighton", "Broadmeadows",
         "Chadstone", "Cheltenham", "Cranbourne", "Dandenong", "Doncaster", "Eastland",
@@ -70,12 +92,72 @@ const storesByState = {
         "Prahran", "Preston", "Richmond", "Ringwood", "South Wharf", "Springvale",
         "Sunbury", "Traralgon", "Watergardens", "Werribee"
     ],
+    QLD: [
+        "Bald Hills", "Biggera Waters", "Brisbane City", "Broadbeach", "Browns Plains",
+        "Buddina", "Bundaberg", "Burleigh Heads", "Cairns", "Capalaba", "Carindale",
+        "Chermside", "Garden City", "Helensvale", "Ipswich", "Kawana", "Loganholme",
+        "Mackay", "Maroochydore", "Morayfield", "Mount Gravatt", "Noosa", "Robina",
+        "Rockhampton", "Springfield", "Toowoomba", "Townsville", "Underwood"
+    ],
     WA: [
         "Armadale", "Belmont", "Booragoon", "Bunbury", "Cannington", "Carousel",
         "Claremont", "Cockburn", "Geraldton", "Joondalup", "Karrinyup", "Mandurah",
         "Midland", "Morley", "Osborne Park", "Perth City", "Rockingham", "Whitford"
     ],
+    SA: [
+        "Adelaide", "Adelaide Airport", "Cavan", "Colonnades", "Elizabeth",
+        "Gepps Cross", "Marion", "Modbury", "Munno Para", "Noarlunga", "Rundle Mall",
+        "West Lakes"
+    ],
+    TAS: ["Devonport", "Hobart", "Launceston", "Rosny"],
+    ACT: ["Belconnen", "Canberra City", "Fyshwick", "Tuggeranong", "Woden"],
+    NT: ["Berrimah", "Darwin", "Palmerston"],
     NZ: ["Albany", "Auckland CBD", "Botany", "Christchurch", "Hamilton", "Manukau", "Newmarket", "Wellington"]
+};
+
+const storePositionOverrides = {
+    ACT: [
+        [291, 125],
+        [385, 155],
+        [457, 193],
+        [507, 237],
+        [534, 283]
+    ],
+    NT: [
+        [291, 125],
+        [457, 193],
+        [534, 283]
+    ],
+    SA: [
+        [260, 132],
+        [330, 168],
+        [392, 204],
+        [440, 242],
+        [470, 280],
+        [488, 318],
+        [490, 356],
+        [470, 394],
+        [430, 432],
+        [382, 470],
+        [326, 508],
+        [260, 546]
+    ],
+    TAS: [
+        [291, 125],
+        [424, 173],
+        [496, 226],
+        [534, 283]
+    ],
+    NZ: [
+        [291, 125],
+        [385, 155],
+        [457, 193],
+        [507, 237],
+        [534, 283],
+        [539, 332],
+        [523, 380],
+        [484, 425]
+    ]
 };
 
 const fallbackTracks = [
@@ -209,6 +291,11 @@ function showSection(sectionId) {
     }
 
     window.scrollTo(0, 0);
+    setRemoteOpen(false);
+
+    if (sectionId === "stores") {
+        scaleStoreOrbit();
+    }
 }
 
 function renderStores(state = "VIC") {
@@ -221,15 +308,22 @@ function renderStores(state = "VIC") {
     });
 
     const stores = storesByState[state] || [];
-    const fontSize = stores.length > 30 ? 14 : stores.length > 18 ? 16 : 19;
+    const isMobileLayout = window.matchMedia("(max-width: 830px)").matches;
+    const fontSize = isMobileLayout
+        ? stores.length > 30 ? 21 : stores.length > 18 ? 22 : 24
+        : stores.length > 30 ? 14 : stores.length > 18 ? 16 : 19;
     const rowGap = stores.length > 30 ? 31 : stores.length > 18 ? 33 : 36;
     const firstStoreY = 118;
     const orbitHeight = Math.max(560, firstStoreY + stores.length * rowGap + 110);
 
+    const customPositions = storePositionOverrides[state];
+
     const links = stores.map((store, index) => {
         const progress = stores.length > 1 ? index / (stores.length - 1) : 0;
-        const left = 250 + Math.sin(progress * Math.PI) * 250;
-        const top = firstStoreY + index * rowGap;
+        const [left, top] = customPositions?.[index] || [
+            250 + Math.sin(progress * Math.PI) * 250,
+            firstStoreY + index * rowGap
+        ];
 
         return `<a class="store-orbit-link" style="left:${left.toFixed(1)}px; top:${top.toFixed(1)}px; font-size:${fontSize}px" href="https://www.jbhifi.com.au/pages/store-finder/" target="_blank" rel="noreferrer">${store}</a>`;
     }).join("");
@@ -246,6 +340,8 @@ function renderStores(state = "VIC") {
             ${links}
         </div>
     `;
+
+    scaleStoreOrbit();
 }
 
 function initialiseStores() {
@@ -267,18 +363,72 @@ function initialiseStores() {
     renderStores("VIC");
 }
 
+function scaleStoreOrbit() {
+    const orbit = storeList?.querySelector(".store-orbit");
+    if (!orbit || !storeList) {
+        return;
+    }
+
+    if (!window.matchMedia("(max-width: 830px)").matches) {
+        storeList.style.removeProperty("height");
+        orbit.style.removeProperty("--store-scale");
+        return;
+    }
+
+    const baseWidth = 760;
+    const availableWidth = storeList.clientWidth || Math.max(0, window.innerWidth - 24);
+    const scale = Math.min(1, availableWidth / baseWidth);
+    const orbitHeight = Number.parseFloat(getComputedStyle(orbit).getPropertyValue("--orbit-height")) || orbit.offsetHeight;
+
+    orbit.style.setProperty("--store-scale", scale.toFixed(4));
+    storeList.style.height = `${Math.ceil(orbitHeight * scale)}px`;
+}
+
 sectionButtons.forEach((button) => {
     button.addEventListener("click", () => {
         showSection(button.dataset.section);
     });
 });
 
+if (remoteLauncher) {
+    remoteLauncher.addEventListener("click", () => {
+        setRemoteOpen(!document.body.classList.contains("remote-open"));
+    });
+}
+
+if (remoteClose) {
+    remoteClose.addEventListener("click", () => {
+        setRemoteOpen(false);
+    });
+}
+
+if (displayToggle) {
+    displayToggle.addEventListener("click", () => {
+        setDisplayEffects(!document.body.classList.contains("display-effects"));
+    });
+}
+
+if (sidebar) {
+    sidebar.addEventListener("click", (event) => {
+        if (event.target === sidebar) {
+            setRemoteOpen(false);
+        }
+    });
+}
+
+window.addEventListener("resize", scaleStoreOrbit);
+
 document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
-        showSection("welcome");
+        if (document.body.classList.contains("remote-open")) {
+            setRemoteOpen(false);
+        } else {
+            showSection("welcome");
+        }
     }
 });
 
 initialiseStores();
+initialiseDisplayEffects();
 initialiseMusicPanels();
 showSection("welcome");
