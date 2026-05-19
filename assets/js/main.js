@@ -334,7 +334,9 @@ function renderStores(state = "VIC") {
             <div class="store-product store-product-screen"><img src="assets/catalog/tv-oled.jpg" alt=""></div>
             <div class="store-product store-product-stack"><img src="assets/catalog/audio-speaker.jpg" alt=""></div>
             <svg class="store-arc" viewBox="0 0 260 720" preserveAspectRatio="none" aria-hidden="true">
-                <path d="M18 16 C312 82 310 632 18 704"></path>
+                <path class="store-arc-glow-wide" d="M18 16 C312 82 310 632 18 704"></path>
+                <path class="store-arc-glow-offset" transform="translate(10 0)" d="M18 16 C312 82 310 632 18 704"></path>
+                <path class="store-arc-line" d="M18 16 C312 82 310 632 18 704"></path>
             </svg>
             <div class="store-orbit-state">${state} stores</div>
             ${links}
